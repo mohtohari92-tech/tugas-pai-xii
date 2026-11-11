@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tugas Daring PAI: Iman, Islam, dan Ihsan</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#f6f4ee;--card:#fff;--tx:#1f2a24;--mu:#5d6b63;--pr:#0f6b4f;--pr2:#e1f1ea;--ok:#0f7a3d;--okb:#dcf3e4;--no:#b3261e;--nob:#fbe3e1;--bd:#dcd8cc}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121a16;--card:#1b2620;--tx:#e8efe9;--mu:#9fb0a6;--pr:#4cc79a;--pr2:#1f3a2f;--ok:#6fdc9a;--okb:#18382a;--no:#ff9a92;--nob:#40201e;--bd:#33433a}}
+:root[data-theme="dark"]{--bg:#121a16;--card:#1b2620;--tx:#e8efe9;--mu:#9fb0a6;--pr:#4cc79a;--pr2:#1f3a2f;--ok:#6fdc9a;--okb:#18382a;--no:#ff9a92;--nob:#40201e;--bd:#33433a}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--tx);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.55}
+body{padding:0 14px 60px}
+main{max-width:760px;margin:0 auto}
+header{padding:26px 0 8px}
+h1{font-size:1.5rem;margin:0 0 4px;color:var(--pr)}
+.sub{color:var(--mu);font-size:.92rem;margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0}
+.chip{background:var(--pr2);color:var(--pr);border-radius:99px;padding:3px 11px;font-size:.78rem;font-weight:600}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:16px;margin:14px 0}
+h2{font-size:1.1rem;margin:0 0 4px}
+.cp{font-size:.82rem;color:var(--mu);margin:0 0 10px}
+.q{padding:12px 0;border-top:1px solid var(--bd)}
+.q:first-of-type{border-top:0}
+.q p{margin:0 0 8px;font-weight:600}
+.opts{display:grid;gap:7px}
+.opts button{font:inherit;text-align:left;background:var(--bg);color:var(--tx);border:1.5px solid var(--bd);border-radius:10px;padding:9px 12px;cursor:pointer}
+.opts button:hover:not(:disabled){border-color:var(--pr)}
+.opts button.ok{background:var(--okb);border-color:var(--ok)}
+.opts button.no{background:var(--nob);border-color:var(--no)}
+.opts button:disabled{cursor:default}
+.fb{font-size:.88rem;margin-top:8px;padding:8px 11px;border-radius:9px;display:none}
+.fb.ok{display:block;background:var(--okb);color:var(--ok)}
+.fb.no{display:block;background:var(--nob);color:var(--no)}
+input,textarea{width:100%;font:inherit;background:var(--bg);color:var(--tx);border:1.5px solid var(--bd);border-radius:10px;padding:9px 11px}
+textarea{min-height:90px;resize:vertical}
+label{font-weight:600;font-size:.92rem;display:block;margin:10px 0 4px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:520px){.row{grid-template-columns:1fr}}
+.btn{font:inherit;font-weight:700;background:var(--pr);color:var(--bg);border:0;border-radius:10px;padding:11px 18px;cursor:pointer;margin:6px 8px 0 0}
+.btn.alt{background:var(--pr2);color:var(--pr)}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding:8px 0}
+.track{height:8px;background:var(--pr2);border-radius:9px;overflow:hidden}
+.fill{height:100%;width:0;background:var(--pr);transition:width .3s}
+.bar small{color:var(--mu)}
+#res{display:none}
+.score{font-size:2.2rem;font-weight:800;color:var(--pr)}
+.tbl{width:100%;border-collapse:collapse;font-size:.88rem;margin-top:8px}
+.tbl td{border:1px solid var(--bd);padding:6px 9px}
+@media print{.bar,.btn,.opts button:not(.ok):not(.no){display:none}body{background:#fff}}
+</style>
+</head>
+<body>
+<main>
+<header>
+  <h1>Iman, Islam, dan Ihsan</h1>
+  <p class="sub">Tugas Daring Interaktif · Pendidikan Agama Islam dan Budi Pekerti · Fase F (Kelas XII)</p>
+  <div class="chips"><span class="chip">Cinta Allah &amp; Rasul-Nya</span><span class="chip">Cinta Ilmu</span><span class="chip">Cinta Lingkungan</span><span class="chip">Cinta Diri &amp; Sesama</span><span class="chip">Cinta Tanah Air</span></div>
+</header>
+
+<div class="card">
+  <h2>Tujuan Pembelajaran</h2>
+  <p class="cp">Elemen Akidah, CP PAIBP Fase F (Kelas XII): memahami beberapa cabang iman (syu‘ab al-īmān) serta keterkaitan iman, Islam, dan ihsan, lalu mengaitkannya dengan akhlak, adab bermasyarakat, etika digital, dan dunia kerja, serta menebar Islam rahmatan lil ‘alamin.</p>
+  <div class="row">
+    <div><label for="nm">Nama</label><input id="nm" placeholder="Nama lengkap"></div>
+    <div><label for="kl">Kelas / Jurusan</label><input id="kl" placeholder="Contoh: XII TKR 1"></div>
+  </div>
+</div>
+
+<div class="bar"><div class="track"><div class="fill" id="fill"></div></div><small id="prog">Terjawab 0 dari 21</small></div>
+
+<div id="sections"></div>
+
+<div class="card">
+  <h2>Bagian D · Refleksi dan Aksi Nyata</h2>
+  <p class="cp">Dinilai guru. Jawab dengan kalimatmu sendiri.</p>
+  <label for="r1">1. Jelaskan bagaimana iman, Islam, dan ihsan akan membentuk caramu bekerja, berwirausaha, atau melanjutkan studi setelah lulus. Beri satu contoh dari bidang jurusanmu.</label>
+  <textarea id="r1"></textarea>
+  <label for="r2">2. Pilih satu nilai Panca Cinta, lalu tulis satu aksi nyata yang akan kamu lakukan minggu ini di sekolah, rumah, atau tempat PKL.</label>
+  <textarea id="r2"></textarea>
+  <button class="btn" id="fin">Selesai &amp; Lihat Hasil</button>
+</div>
+
+<div class="card" id="res">
+  <h2>Hasil Tugas</h2>
+  <div class="score" id="sc"></div>
+  <p id="msg"></p>
+  <table class="tbl" id="tb"></table>
+  <button class="btn" onclick="window.print()">Cetak / Simpan PDF</button>
+  <button class="btn alt" id="cp2">Salin Ringkasan</button>
+  <p class="cp" id="cpm"></p>
+</div>
+</main>
+
+<script>
+var PC=["Cinta Allah &amp; Rasul-Nya","Cinta Ilmu","Cinta Lingkungan","Cinta Diri &amp; Sesama","Cinta Tanah Air"],IB=["Iman (keyakinan)","Islam (pengamalan)","Ihsan (kualitas)"];
+var S=[
+{t:"Bagian A · Menganalisis Iman, Islam, dan Ihsan",c:"Pengetahuan dan analisis · Cinta Ilmu",q:[
+{q:"Hubungan iman, Islam, dan ihsan yang paling tepat adalah…",o:["Ketiganya terpisah dan berdiri sendiri","Iman sebagai landasan keyakinan, Islam sebagai pengamalan lahiriah, ihsan sebagai penyempurna kualitas keduanya","Ihsan harus ada sebelum iman","Islam saja sudah cukup"],a:1,e:"Hadis Jibril menempatkan ketiganya sebagai satu kesatuan ajaran yang saling melengkapi."},
+{q:"Seorang siswa rajin salat, tetapi curang saat ujian. Penilaian yang paling tepat adalah…",o:["Imannya sempurna karena rajin salat","Amal lahiriahnya tampak, namun iman dan ihsan belum terwujud dalam akhlak","Tidak ada kaitan salat dengan kejujuran","Kecurangan kecil tidak memengaruhi iman"],a:1,e:"Iman yang benar tampak pada akhlak. Kejujuran adalah cabang iman."},
+{q:"Mengapa rasa malu disebut sebagai bagian dari iman?",o:["Karena membuat orang menjadi pendiam","Karena mencegah perbuatan buruk dan mendorong menjaga kehormatan diri","Karena hanya dimiliki orang berilmu","Karena membuat orang tidak berani bertindak"],a:1,e:"Malu adalah cabang iman yang menjaga seseorang dari maksiat dan perbuatan tercela."},
+{q:"Lulusan SMK yang bekerja tepat waktu, teliti, dan bertanggung jawab karena merasa diawasi Allah menunjukkan…",o:["Ihsan dalam bekerja (itqan)","Sikap kaku","Pencitraan di depan atasan","Kebiasaan semata"],a:0,e:"Bekerja sebaik mungkin karena Allah adalah wujud ihsan."},
+{q:"Seorang karyawan menerima suap untuk meloloskan produk yang tidak sesuai standar. Cabang iman yang paling jelas dilanggar adalah…",o:["Amanah dan kejujuran","Membaca Al-Qur’an","Menyingkirkan gangguan di jalan","Berbakti kepada orang tua"],a:0,e:"Suap mengkhianati amanah dan merusak kejujuran."},
+{q:"Menerima kabar viral yang belum jelas sumbernya, sikap yang sesuai dengan iman dan etika digital adalah…",o:["Langsung membagikan agar yang lain waspada","Tabayyun (memeriksa kebenaran) sebelum membagikan","Menambahkan komentar pribadi lalu membagikan","Mengabaikan seluruh informasi"],a:1,e:"QS. Al-Hujurat ayat 6 memerintahkan tabayyun saat menerima kabar dari sumber yang belum jelas."},
+{q:"Hal yang paling dapat menguatkan iman adalah…",o:["Menjauhi ilmu agar tidak ragu","Memperdalam ilmu, memperbanyak zikir, dan beramal saleh","Menunggu hidayah tanpa usaha","Beribadah hanya pada saat ujian"],a:1,e:"Iman dapat bertambah dengan ketaatan, ilmu, dan zikir, serta berkurang karena maksiat."},
+{q:"Menghormati teman yang berbeda keyakinan serta menjaga kerukunan di sekolah dan tempat PKL merupakan buah dari…",o:["Sikap tidak peduli terhadap agama","Islam rahmatan lil ‘alamin dan moderasi beragama","Pencampuran ajaran agama","Kelemahan iman"],a:1,e:"Iman dan ihsan yang matang melahirkan akhlak yang membawa rahmat bagi semesta."}
+]},
+{t:"Bagian B · Analisis Kasus: Unsur Mana yang Paling Perlu Diperkuat?",c:"Analisis keterkaitan · Cinta Allah dan Rasul-Nya",q:[
+{q:"Mengaku yakin Allah Maha Melihat, tetapi tidak pernah mengerjakan salat.",o:IB,a:1,e:"Keyakinan belum diwujudkan dalam amal lahiriah, yaitu rukun Islam."},
+{q:"Rajin salat dan puasa, tetapi mengerjakan tugas asal-asalan dan tidak peduli kualitas.",o:IB,a:2,e:"Ibadah ritual sudah ada, tetapi semangat itqan atau ihsan dalam bekerja belum tampak."},
+{q:"Ragu bahwa ada hari pembalasan, sehingga berani korupsi tanpa rasa takut.",o:IB,a:0,e:"Keraguan terhadap hari akhir adalah masalah keimanan."},
+{q:"Bersedekah dengan niat agar dipuji di media sosial.",o:IB,a:2,e:"Ihsan menuntut keikhlasan, yaitu beramal karena Allah."},
+{q:"Meyakini Allah dan rasul-Nya, tetapi menganggap kitab-kitab-Nya sudah tidak relevan.",o:IB,a:0,e:"Beriman kepada kitab Allah adalah rukun iman."},
+{q:"Percaya hari akhir dan rutin salat, tetapi enggan menunaikan zakat yang sudah wajib.",o:IB,a:1,e:"Zakat adalah rukun Islam yang wajib diamalkan."},
+{q:"Salat dan zakat lancar, tetapi bekerja tanpa integritas dan sering menyontek.",o:IB,a:2,e:"Kualitas dan kejujuran dalam keseharian adalah wujud ihsan."},
+{q:"Tidak yakin adanya qada dan qadar, sehingga mudah putus asa saat gagal ujian.",o:IB,a:0,e:"Beriman kepada qada dan qadar menumbuhkan sabar dan tawakal."}
+]},
+{t:"Bagian C · Menerapkan Panca Cinta",c:"Penerapan nilai di dunia kerja dan masyarakat · Pilih nilai yang paling tampak",q:[
+{q:"Menyusun rencana usaha yang mengelola limbah bengkel dengan baik dan ramah lingkungan.",o:PC,a:2,e:"Menjaga bumi adalah amanah manusia sebagai khalifah."},
+{q:"Mengikuti pelatihan sertifikasi kompetensi dan tetap belajar setelah lulus.",o:PC,a:1,e:"Menuntut ilmu berlangsung sepanjang hayat."},
+{q:"Menjaga salat dan meneladani akhlak Nabi, termasuk di tempat PKL atau kerja.",o:PC,a:0,e:"Meneladani Rasulullah adalah bukti cinta kepada Allah dan Rasul-Nya."},
+{q:"Mendampingi adik kelas yang kesulitan, tidak menggunjing rekan, serta menjaga kesehatan diri.",o:PC,a:3,e:"Menghargai diri dan menyayangi sesama adalah bagian dari akhlak mulia."},
+{q:"Memilih berkarya di dalam negeri, memakai produk lokal, dan menjaga kerukunan antarsuku serta antaragama.",o:PC,a:4,e:"Menjaga persatuan dan memajukan bangsa adalah wujud cinta tanah air."}
+]}
+];
+var total=0,done=0,score=0,secScore=[0,0,0],secMax=[0,0,0],box=document.getElementById("sections");
+S.forEach(function(s,si){
+  var card=document.createElement("div");card.className="card";
+  card.innerHTML="<h2>"+s.t+"</h2><p class='cp'>"+s.c+"</p>";
+  s.q.forEach(function(it,qi){
+    total++;secMax[si]++;
+    var d=document.createElement("div");d.className="q";
+    d.innerHTML="<p>"+(qi+1)+". "+it.q+"</p>";
+    var ow=document.createElement("div");ow.className="opts";
+    var fb=document.createElement("div");fb.className="fb";
+    it.o.forEach(function(ot,oi){
+      var b=document.createElement("button");b.innerHTML=ot;
+      b.onclick=function(){
+        var bs=ow.querySelectorAll("button");
+        bs.forEach(function(x){x.disabled=true});
+        done++;
+        if(oi===it.a){b.className="ok";fb.className="fb ok";fb.innerHTML="Benar. "+it.e;score++;secScore[si]++}
+        else{b.className="no";bs[it.a].className="ok";fb.className="fb no";fb.innerHTML="Belum tepat. "+it.e}
+        upd();
+      };
+      ow.appendChild(b);
+    });
+    d.appendChild(ow);d.appendChild(fb);card.appendChild(d);
+  });
+  box.appendChild(card);
+});
+function upd(){
+  document.getElementById("fill").style.width=(done/total*100)+"%";
+  document.getElementById("prog").textContent="Terjawab "+done+" dari "+total;
+}
+document.getElementById("fin").onclick=function(){
+  var nm=document.getElementById("nm").value.trim()||"(tanpa nama)";
+  var kl=document.getElementById("kl").value.trim()||"-";
+  var n=Math.round(score/total*100);
+  var r=document.getElementById("res");r.style.display="block";
+  document.getElementById("sc").textContent=n+" / 100";
+  var m=n>=85?"Sangat baik. Pemahamanmu kuat, terapkan juga dalam keseharian.":n>=70?"Baik. Ulangi bagian yang masih keliru agar makin mantap.":"Perlu diperdalam. Baca kembali materi, lalu coba lagi.";
+  if(done<total)m="Masih ada "+(total-done)+" soal yang belum dijawab. "+m;
+  document.getElementById("msg").textContent=m+" Nilai refleksi diberikan oleh guru.";
+  var nms=["A · Iman, Islam, Ihsan","B · Klasifikasi","C · Panca Cinta"];
+  var h="";
+  for(var i=0;i<3;i++)h+="<tr><td>"+nms[i]+"</td><td>"+secScore[i]+" / "+secMax[i]+"</td></tr>";
+  document.getElementById("tb").innerHTML=h;
+  var txt="TUGAS PAI: IMAN, ISLAM, IHSAN\nNama: "+nm+"\nKelas: "+kl+"\nSkor pilihan: "+score+"/"+total+" (nilai "+n+")\n"+nms.map(function(x,i){return x+": "+secScore[i]+"/"+secMax[i]}).join("\n")+"\n\nRefleksi 1:\n"+document.getElementById("r1").value+"\n\nRefleksi 2 (aksi nyata Panca Cinta):\n"+document.getElementById("r2").value;
+  window._txt=txt;
+  r.scrollIntoView({behavior:"smooth"});
+};
+document.getElementById("cp2").onclick=function(){
+  var p=document.getElementById("cpm");
+  try{navigator.clipboard.writeText(window._txt).then(function(){p.textContent="Ringkasan disalin. Tempel ke Google Classroom atau WhatsApp guru."},function(){p.textContent="Salin gagal. Gunakan tombol Cetak / Simpan PDF lalu kirim ke guru."})}
+  catch(e){p.textContent="Salin gagal. Gunakan tombol Cetak / Simpan PDF lalu kirim ke guru."}
+};
+</script>
+</body>
+</html>
